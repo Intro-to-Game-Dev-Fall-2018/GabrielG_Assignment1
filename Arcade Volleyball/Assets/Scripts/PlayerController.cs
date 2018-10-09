@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// This code will be used to control the behavior of the player objects, based on the tags used to denote them.
+// Several values will be called upon to give them different inputs and outputs.  
 public class PlayerController : MonoBehaviour {
 	
 	// Basic Storage Values
@@ -13,9 +15,9 @@ public class PlayerController : MonoBehaviour {
 	private int count;
 	public int countMax = 5;
 	
-	// Stores the UI Values
+	// Stores the UI Values that determine the text
 	public Text countText;
-	public Text winText;
+	public Text winText; 
 
 	public bool WinState = false;
 	
@@ -32,13 +34,13 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
-
+		
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		rb.AddForce(movement * speed);
 		
-
 	}
 	
+	// This code will be used to make the player's jump
 	
 	// These are two void methods for managing the Text output for the UI
 	void setCountText()
